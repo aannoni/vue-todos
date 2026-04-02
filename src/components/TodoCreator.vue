@@ -1,19 +1,26 @@
 <script setup>
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 
-const todo = ref("");
+const simple = ref("");
+
+const complex = reactive({
+  name: "test"
+});
 </script>
 
 <template>
+  <!-- ref can only use primitive data types -->
   <div class="input-wrap">
-    <input type="text" v-model="todo" />
-    <!-- <select v-model="todo">
-    <option>High</option>
-    <option>Medium</option>
-    <option>Low</option>
-  </select> -->
+    <input type="text" v-model="simple" />
   </div>
-  <p> {{ todo }}</p>
+  <p> {{ simple }}</p>
+
+  <!-- reactive for more complex data types -->
+  <div class="input-wrap">
+    <input type="text" v-model="complex.name" />
+  </div>
+  <p> {{ complex.name }}</p>
+
 </template>
 
 <style lang="scss" scoped>
