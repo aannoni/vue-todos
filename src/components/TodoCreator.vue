@@ -7,8 +7,13 @@ const todo = ref("");
 <template>
   <div class="input-wrap">
     <input type="text" v-model="todo" />
-    <button>Create</button>
+    <!-- <select v-model="todo">
+    <option>High</option>
+    <option>Medium</option>
+    <option>Low</option>
+  </select> -->
   </div>
+  <p> {{ todo }}</p>
 </template>
 
 <style lang="scss" scoped>
