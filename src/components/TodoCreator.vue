@@ -1,32 +1,20 @@
 <script setup>
-import { ref, reactive } from "vue";
+import { ref, defineEmits } from "vue";
 
-const simple = ref("");
+const emit = defineEmits(["created-todo"]);
 
-// console.log(simple.value);
-// shows me the actual value of simple (like what is inside simple)
+const inputs = ref("");
 
-const complex = reactive({
-  name: "test"
-});
-
-// console.log(complex.name);
-
+const createTodo = () => {
+  emit("created-todo", inputs.value);
+}
 </script>
 
 <template>
-  <!-- ref can only use primitive data types -->
   <div class="input-wrap">
-    <input type="text" v-model="simple" />
+    <input type="text" v-model="inputs" />
+    <button @click="createTodo()">Add todo</button>
   </div>
-  <p> {{ simple }}</p>
-
-  <!-- reactive for more complex data types -->
-  <div class="input-wrap">
-    <input type="text" v-model="complex.name" />
-  </div>
-  <p> {{ complex.name }}</p>
-
 </template>
 
 <style lang="scss" scoped>
