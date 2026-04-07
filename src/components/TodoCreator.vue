@@ -3,9 +3,15 @@ import { ref, reactive } from "vue";
 
 const simple = ref("");
 
+// console.log(simple.value);
+// shows me the actual value of simple (like what is inside simple)
+
 const complex = reactive({
   name: "test"
 });
+
+// console.log(complex.name);
+
 </script>
 
 <template>
