@@ -1,15 +1,13 @@
 <script setup>
 import { ref } from "vue";
 import { uid } from "uid";
-
 import TodoCreator from "../components/TodoCreator.vue";
-
 const todoList = ref([]);
 
-const createTodo = (inputs) => {
+const createTodo = (inputState) => {
   todoList.value.push({
     id: uid(),
-    inputs,
+    inputState,
     isCompleted: null,
     isEditing: null,
   });
