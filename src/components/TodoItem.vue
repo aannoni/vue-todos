@@ -16,6 +16,7 @@
           {{ todopropertyname.inputState }}
         </span>
     </div>
+    <div class="todo-actions"></div>
   </li>
 </template>
 
