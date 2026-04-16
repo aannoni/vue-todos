@@ -21,7 +21,7 @@ const createTodo = (inputState) => {
     <h1>Create Todo</h1>
     <TodoCreator @created-todo="createTodo" />
     <ul>
-      <TodoItem v-for="todo in todoList" />
+      <TodoItem v-for="todo in todoList" v-bind:todopropertyname="todo"/>
     </ul>
   </main>
 </template>
